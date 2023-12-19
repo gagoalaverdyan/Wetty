@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="welcomer">
+            <img src="{{ url_for("static", filename="logo.png") }}" class="logo">
+            <div class="welcome-text">Welcome to Wetty!</div>
+            <input type="text" placeholder="City name" spellcheck="false">
+        </div>
+    </div>
+{% endblock content %}
