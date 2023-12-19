@@ -5,7 +5,27 @@
         <div class="welcomer">
             <img src="{{ url_for("static", filename="logo.png") }}" class="logo">
             <div class="welcome-text">Welcome to Wetty!</div>
-            <input type="text" placeholder="City name" spellcheck="false">
+            <div class="cities-list">
+                <div class="city">Yerevan</div>
+                <div class="city">Los Angeles</div>
+                <div class="city">Moscow</div>
+                <div class="city">Delhi</div>
+                <div class="city">Reykjavík</div>
+                <div class="city">Berlin</div>
+                <div class="city">Prague</div>
+                <div class="city">Yerevan</div>
+                <div class="city">Los Angeles</div>
+                <div class="city">Moscow</div>
+                <div class="city">Delhi</div>
+                <div class="city">Reykjavík</div>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Enter the city name" spellcheck="false" class="search-input">
+                <button class="search-button">
+                    <img src="{{ url_for("static", filename="search.png") }}" alt="">
+                </button>
+            </div>
+            <div class="info"><a href="https://github.com/gagoalaverdyan" target="_blank">Created with ♥ by Gagik Alaverdyan</a></div>
         </div>
     </div>
 {% endblock content %}
