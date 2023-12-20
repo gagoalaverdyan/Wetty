@@ -16,7 +16,9 @@ a:active {
     text-decoration: none;
 }
 
-.container {
+/* Search page */
+
+.container-search {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +66,7 @@ a:active {
     border: 1px solid pink;
     border-radius: 15px;
     color: whitesmoke;
+    cursor: pointer;
 }
 
 .search {
@@ -78,7 +81,7 @@ a:active {
     padding: 0 15px;
     background: #ffffff;
     color: #7023ff;
-    height: 50px;
+    height: 42px;
     border-radius: 18px;
     flex: 1;
     margin-right: 16px;
@@ -104,4 +107,49 @@ a:active {
 .info {
     color: white;
     margin-bottom: 20px;
+}
+
+/* Weather page */
+
+.container-weather {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(70deg, rgb(29, 0, 133), rgb(41, 0, 67));
+    padding: 20px 60px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.current-weather {
+    width: 380px;
+    height: 260px;
+    padding: 12px;
+    background-color: pink;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px 10px;
+}
+
+.current-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.weather-icon {
+    width: 20%;
 }
