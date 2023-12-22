@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container-weather">
-    <div class="row">
+    <div class="current-weather-row">
         <div class="current-weather">
             <div class="current-info">
                 <div class="current-info-text">Current weather</div>
@@ -10,12 +10,34 @@
                 <div class="current-city">Yerevan</div>
             </div>
             <div class="weather-info">
-                <img src="{{ url_for("static", filename="sun.png") }}" class="weather-icon">
+                <img src="{{ url_for("static", filename="sun.png" ) }}" class="weather-icon">
                 <div class="current-percentage">30oC</div>
             </div>
             <div class="weather-text-container">
                 <div class="weather-state-text">Clear</div>
-                <div class="weather-state-text">Feels Like 32oC</div>
+                <div class="feels-like-text">Feels Like 32oC</div>
+            </div>
+        </div>
+        <div class="current-air-quality">
+            <div class="current-aqi">Air Quality Index</div>
+            <div class="current-aqi-text">42</div>
+            <div class="current-aqi-text">Good</div>
+        </div>
+        <div class="additional-info">
+            <div class="additional-info-row">
+                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">Hi</div>
+            </div>
+            <div class="additional-info-row">
+                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">Hi</div>
+            </div>
+            <div class="additional-info-row">
+                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">Hi</div>
             </div>
         </div>
     </div>

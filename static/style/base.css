@@ -2,10 +2,10 @@
 
 body {
     margin: 0;
-    overflow: hidden;
     font-family: Afacad, sans-serif;
     user-select: none;
     -webkit-user-select: none;
+    background: linear-gradient(70deg, rgb(29, 0, 133), rgb(41, 0, 67));
 }
 
 a,
@@ -24,7 +24,6 @@ a:active {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(70deg, rgb(29, 0, 133), rgb(41, 0, 67));
 }
 
 .welcomer {
@@ -111,31 +110,41 @@ a:active {
 
 /* Weather page */
 
+/* Current weather part */
+
+
 .container-weather {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(70deg, rgb(29, 0, 133), rgb(41, 0, 67));
-    padding: 20px 60px;
+
+    padding: 20px 220px;
 }
 
-.row {
+.current-weather-row {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px 20px;
 }
 
 .current-weather {
-    width: 380px;
+    width: 360px;
     height: 260px;
-    padding: 12px;
-    background-color: pink;
-    border-radius: 12px;
+    padding: 5px 12px;
+    background-image: url(../backdrop-clear.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px 10px;
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px 5px;
+    color: whitesmoke;
 }
 
 .current-info {
@@ -143,13 +152,97 @@ a:active {
     flex-direction: column;
 }
 
+.current-info-text {
+    font-size: 18px;
+}
+
+.current-date {
+    font-size: 12px;
+}
+
+.current-city {
+    font-size: 28px;
+}
+
 .weather-info {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
+    gap: 15px;
 }
 
 .weather-icon {
-    width: 20%;
+    width: 72px;
+}
+
+.current-percentage {
+    font-size: 52px;
+}
+
+.weather-state-text {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.feels-like-text {
+    font-size: 18px;
+}
+
+.current-air-quality {
+    width: 260px;
+    height: 260px;
+    padding: 5px 12px;
+    background: url(../air-quality-good.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    color: whitesmoke;
+}
+
+.current-aqi {
+    font-size: 18px;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.current-aqi-text {
+    font-size: 60px;
+    line-height: 60px;
+    color: whitesmoke;
+}
+
+.additional-info {
+    width: 384px;
+    height: 270px;
+    background: pink;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+.additional-info-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px 12px;
+}
+
+.additional-info-box {
+    width: 120px;
+    height: 84px;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
