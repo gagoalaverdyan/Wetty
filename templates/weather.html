@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block css %} {{ url_for("static", filename="style/current_weather.css") }} {% endblock css %}
+
 {% block content %}
 <div class="container-weather">
     <div class="current-weather-row">
@@ -25,20 +27,52 @@
         </div>
         <div class="additional-info">
             <div class="additional-info-row">
-                <div class="additional-info-box">Hi</div>
-                <div class="additional-info-box">Hi</div>
-                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Humidity</div>
+                    <div class="info-box-text">65%</div>
+                </div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Pressure</div>
+                    <div class="info-box-text">1009 mb</div>
+                </div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Visibility</div>
+                    <div class="info-box-text">6 km</div>
+                </div>
             </div>
             <div class="additional-info-row">
-                <div class="additional-info-box">Hi</div>
-                <div class="additional-info-box">Hi</div>
-                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Sunrise</div>
+                    <div class="info-box-text">08:21 AM</div>
+                </div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Sunset</div>
+                    <div class="info-box-text">05:39 PM</div>
+                </div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Daytime</div>
+                    <div class="info-box-text">9hr 18m</div>
+                </div>
             </div>
             <div class="additional-info-row">
-                <div class="additional-info-box">Hi</div>
-                <div class="additional-info-box">Hi</div>
-                <div class="additional-info-box">Hi</div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Wind Speed</div>
+                    <div class="info-box-text">0.51 km/h</div>
+                </div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Wind Degree</div>
+                    <div class="info-box-text">270</div>
+                </div>
+                <div class="additional-info-box">
+                    <div class="current-info-text">Nighttime</div>
+                    <div class="info-box-text">9hr 18m</div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="current-weather-row">
+        <div class="hourly-forecast">
+
         </div>
     </div>
 </div>

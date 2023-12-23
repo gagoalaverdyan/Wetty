@@ -1,0 +1,91 @@
+/* Search page */
+
+.container-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.welcomer {
+    width: 380px;
+    height: 600px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+    justify-content: space-between;
+    background: rgba(146, 146, 146, 0.2);
+}
+
+.logo {
+    height: 40%;
+    margin-top: 20px;
+}
+
+.welcome-text {
+    font-size: 38px;
+    padding: 0;
+    color: #FFA732;
+}
+
+.cities-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+    gap: 4px 5px;
+}
+
+.city {
+    padding: 2px 6px;
+    border: 1px solid pink;
+    border-radius: 15px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.search {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border: 0;
+    outline: 0;
+    padding: 0 15px;
+    background: #ffffff;
+    color: #7023ff;
+    height: 42px;
+    border-radius: 18px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+
+.search-button {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: -65px;
+}
+
+.search button img {
+    width: 26px;
+    border: 0;
+}
+
+.info {
+    color: white;
+    margin-bottom: 20px;
+}
