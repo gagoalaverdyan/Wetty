@@ -138,11 +138,21 @@
     font-size: 28px;
 }
 
-/* Hourly Forecast Part */
+/* Forecast Part */
 
-.hourly-forecast {
-    width: 690px;
+.weather-forecast {
+    width: 100%;
     height: 320px;
     background-color: pink;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.forecast-element {
+    height: 100%;
+    width: 10%;
+    background-color: red;
     border-radius: 10px;
 }

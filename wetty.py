@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import requests
 from flask import Flask, jsonify, render_template
 
@@ -29,3 +31,46 @@ def get_weather():
 
 if __name__ == "__main__":
     wetty.run(debug=True)
+
+
+def get_forecast(city, units, api_key):
+    # Getting the raw info from OpenWeather API
+    request_url = f"https://api.openweathermap.org/data/2.5/forecast?q={city}&units={units}&appid={api_key}"
+    weather_json = requests.get(request_url).json()
+    raw_forecast = dict()
+    for elem in weather_json["list"]:
+        raw_forecast[elem["dt"]] = {
+            "temp": elem["main"]["temp"],
+            "main": elem["weather"][0]["description"],
+        }
+
+    daily_forecast = dict()
+    hourly_forecast = dict()
+
+    for date, content in raw_forecast.items():
+        date_from_utc = datetime.fromtimestamp(int(date))
+        # Getting the daily forecast
+        date_part = date_from_utc.strftime("%d %b")
+        if date_part not in daily_forecast:
+            daily_forecast[date_part] = {
+                "min": int(content["temp"]),
+                "max": int(content["temp"]),
+            }
+        else:
+            daily_forecast[date_part]["min"] = min(
+                daily_forecast[date_part]["min"], int(content["temp"])
+            )
+            daily_forecast[date_part]["max"] = max(
+                daily_forecast[date_part]["max"], int(content["temp"])
+            )
+        # Getting the hourly forecast
+        hourly_time = date_from_utc.strftime("%H:%M")
+        if date_part not in hourly_forecast.keys():
+            hourly_forecast[date_part] = [
+                {"time": hourly_time, "temp": int(content["temp"])}
+            ]
+        else:
+            hourly_forecast[date_part].append(
+                {"time": hourly_time, "temp": int(content["temp"])}
+            )
+    return (hourly_forecast, daily_forecast)
