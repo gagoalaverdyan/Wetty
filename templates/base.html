@@ -12,7 +12,9 @@
 <body>
     {% block content %}
     {% endblock content %}
-    <script type="module" src="{{ url_for("static", filename="/script/script.js")}}"></script>
+
+    {% block script %}
+    {% endblock script %} 
 </body>
 
 </html>

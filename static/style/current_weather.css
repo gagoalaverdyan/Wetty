@@ -22,7 +22,6 @@
     width: 360px;
     height: 260px;
     padding: 5px 12px;
-    background-image: url(../backdrop-clear.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,7 +80,6 @@
     width: 260px;
     height: 260px;
     padding: 5px 12px;
-    background: url(../air-quality-good.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -126,12 +124,13 @@
 .additional-info-box {
     width: 120px;
     height: 84px;
-    background-color: red;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    gap: 2px 2px;
+    background: linear-gradient(to right top, #447aca, #2b6dad, #1c6090, #1a5273, #1d4358);
 }
 
 .info-box-text {

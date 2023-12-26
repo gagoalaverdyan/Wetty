@@ -5,65 +5,65 @@
 {% block content %}
 <div class="container-weather">
     <div class="current-weather-row">
-        <div class="current-weather">
+        <div class="current-weather" id="current-weather">
             <div class="current-info">
                 <div class="current-info-text">Current weather</div>
                 <div class="current-date">{{ current_weather["time"] }}</div>
                 <div class="current-city">{{ current_weather["city"] }}</div>
             </div>
             <div class="weather-info">
-                <img src="{{ url_for("static", filename="sun.png" ) }}" class="weather-icon">
+                <img src="{{ current_weather["icon"] }}" class="weather-icon">
                 <div class="current-percentage">{{ current_weather["temp"] }}</div>
             </div>
             <div class="weather-text-container">
-                <div class="weather-state-text">{{ current_weather["state"] }}</div>
+                <div class="weather-state-text" id="weather-state-text">{{ current_weather["condition"] }}</div>
                 <div class="feels-like-text">Feels like {{ current_weather["feels_like"] }}</div>
             </div>
         </div>
-        <div class="current-air-quality">
+        <div class="current-air-quality" id="current-air-quality">
             <div class="current-aqi">Air Quality Index</div>
-            <div class="current-aqi-text">{{ current_weather["aqi_point"] }}</div>
+            <div class="current-aqi-text" id="current-aqi-point">{{ current_weather["aqi_point"] }}</div>
             <div class="current-aqi-text">{{ current_weather["aqi_text"] }}</div>
         </div>
         <div class="additional-info">
             <div class="additional-info-row">
-                <div class="additional-info-box">
+                <div class="additional-info-box humidity">
                     <div class="current-info-text">Humidity</div>
                     <div class="info-box-text">{{ current_weather["humidity"] }}</div>
                 </div>
-                <div class="additional-info-box">
+                <div class="additional-info-box pressure">
                     <div class="current-info-text">Pressure</div>
                     <div class="info-box-text">{{ current_weather["pressure"] }}</div>
                 </div>
-                <div class="additional-info-box">
+                <div class="additional-info-box visibility">
                     <div class="current-info-text">Visibility</div>
                     <div class="info-box-text">{{ current_weather["visibility"] }}</div>
                 </div>
             </div>
             <div class="additional-info-row">
-                <div class="additional-info-box">
+                <div class="additional-info-box wind_speed">
                     <div class="current-info-text">Wind Speed</div>
                     <div class="info-box-text">{{ current_weather["wind_speed"] }}</div>
                 </div>
-                <div class="additional-info-box">
+                <div class="additional-info-box wind_deg">
                     <div class="current-info-text">Wind Degree</div>
                     <div class="info-box-text">{{ current_weather["wind_deg"] }}</div>
                 </div>
-                <div class="additional-info-box">
+                <div class="additional-info-box cloudiness">
                     <div class="current-info-text">Cloudiness</div>
                     <div class="info-box-text">{{ current_weather["cloudiness"] }}</div>
                 </div>
             </div>
             <div class="additional-info-row">
-                <div class="additional-info-box">
+                <div class="additional-info-box sunrise">
                     <div class="current-info-text">Sunrise</div>
                     <div class="info-box-text">{{ current_weather["sunrise"] }}</div>
                 </div>
-                <div class="additional-info-box">
+                <div class="additional-info-box sunset">
                     <div class="current-info-text">Sunset</div>
                     <div class="info-box-text">{{ current_weather["sunset"] }}</div>
                 </div>
-                <div class="additional-info-box">
+                <div class="additional-info-box daytime">
                     <div class="current-info-text">Daytime</div>
                     <div class="info-box-text">{{ current_weather["daytime"] }}</div>
                 </div>
@@ -106,3 +106,7 @@
     </div>
 </div>
 {% endblock content %}
+
+{% block script %}
+    <script src="{{ url_for("static", filename="/script/weather.js")}}"></script>
+{% endblock script %}

@@ -6,6 +6,7 @@ body {
     user-select: none;
     -webkit-user-select: none;
     background: linear-gradient(70deg, rgb(29, 0, 133), rgb(41, 0, 67));
+    text-shadow: grey 1px 1px 1px;
 }
 
 a,

@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 
 import requests
+from flask import url_for
 
 # Integrate the API, update api keys to variables
 
@@ -50,6 +51,36 @@ def get_current_weather(units):
         aqi_dict["text"] = options[aqi_dict["point"]]
         return aqi_dict
 
+    def get_weather_icon(condition):
+        """Returns weather icon based on condition or returns mist for atmosphere conditions."""
+        filenames = {
+            "Clear": "images/weather/clear.png",
+            "Thunderstorm": "images/weather/thunderstorm.png",
+            "Drizzle": "images/weather/drizzle.png",
+            "Rain": "images/weather/rain.png",
+            "Snow": "images/weather/snow.png",
+            "Clouds": "images/weather/clouds.png",
+        }
+        if condition in filenames.keys():
+            return filenames[condition]
+        else:
+            return "images/weather/mist.png"
+
+    def get_weather_background(condition):
+        """Returns weather background based on condition or returns mist for atmosphere conditions."""
+        filenames = {
+            "Clear": "images/weather_backgrounds/clear.png",
+            "Thunderstorm": "images/weather_backgrounds/thunderstorm.png",
+            "Drizzle": "images/weather_backgrounds/drizzle.png",
+            "Rain": "images/weather_backgrounds/rain.png",
+            "Snow": "images/weather_backgrounds/snow.png",
+            "Clouds": "images/weather_backgrounds/clouds.png",
+        }
+        if condition in filenames.keys():
+            return filenames[condition]
+        else:
+            return "images/weather_backgrounds/mist.png"
+
     # Using a local copy of OpenWeather JSON for Yerevan's weather
     with open("current_json.json", "r", encoding="utf-8") as fp:
         weather_json = json.load(fp)
@@ -68,8 +99,14 @@ def get_current_weather(units):
     # Initiating the current weather dictionary's universal elements
     current_weather = {
         "city": weather_json["name"],
-        "state": weather_json["weather"][0]["description"].title(),
-        "icon": weather_json["weather"][0]["main"].lower(),  # Needs implementation
+        "condition": weather_json["weather"][0]["main"],
+        "icon": url_for(
+            "static", filename=get_weather_icon(weather_json["weather"][0]["main"])
+        ),
+        "background": url_for(
+            "static",
+            filename=get_weather_background(weather_json["weather"][0]["main"]),
+        ),
         "humidity": str(round(weather_json["main"]["humidity"])) + "%",
         "daytime": get_hours_minutes(sunset_raw, sunrise_raw),
         "cloudiness": str(weather_json["clouds"]["all"]) + "%",
