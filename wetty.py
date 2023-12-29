@@ -14,7 +14,10 @@ def search():
 @wetty.route("/weather", methods=["GET"])
 def get_weather():
     return render_template(
-        "weather.html", current_weather=get_current_weather("metric")
+        "weather.html",
+        current_weather=get_current_weather("metric"),
+        hourly_forecast=get_forecast("metric")[0],
+        daily_forecast=get_forecast("metric")[1],
     )
 
 

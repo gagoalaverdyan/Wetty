@@ -72,36 +72,29 @@
     </div>
     <div class="current-weather-row">
         <div class="weather-forecast">
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
-            <div class="forecast-element">
-                Hello
-            </div>
+            {% for day, fc in hourly_forecast.items() %}
+                {% for group in fc %}
+                    <div class="forecast-element">
+                        <div class="current-info-text">{{ day }}</div>
+                        <div class="current-info-text">{{ group.time }}</div>
+                        <img class="hourly-forecast-icon" src="{{ group.icon }}" alt="">
+                        <div class="current-info-text">{{ group.temp }}</div>
+                        <div class="current-info-text">{{ group.state }}</div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="current-weather-row">
+        <div class="weather-forecast">
+            {% for day, fc in daily_forecast.items() %}
+                <div>
+                    {{ day }}
+                    {{ fc.min }}
+                    {{ fc.max }}
+                    {{ fc.state }}
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -6,7 +6,9 @@
     display: flex;
     flex-direction: column;
     gap: 20px 20px;
-    padding: 20px 220px;
+    padding: 20px 0px;
+    margin: auto;
+    width: 70%;
 }
 
 .current-weather-row {
@@ -20,6 +22,7 @@
 
 .current-weather {
     width: 360px;
+    min-width: 280px;
     height: 260px;
     padding: 5px 12px;
     background-position: center;
@@ -31,7 +34,6 @@
     align-items: start;
     justify-content: space-between;
     gap: 10px 5px;
-    color: whitesmoke;
 }
 
 .current-info {
@@ -78,6 +80,7 @@
 
 .current-air-quality {
     width: 260px;
+    min-width: 180px;
     height: 260px;
     padding: 5px 12px;
     background-position: center;
@@ -88,7 +91,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    color: whitesmoke;
 }
 
 .current-aqi {
@@ -100,7 +102,6 @@
 .current-aqi-text {
     font-size: 60px;
     line-height: 60px;
-    color: whitesmoke;
 }
 
 .additional-info {
@@ -111,7 +112,6 @@
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
-    color: whitesmoke;
 }
 
 .additional-info-row {
@@ -130,7 +130,12 @@
     align-items: center;
     justify-content: flex-start;
     gap: 2px 2px;
-    background: linear-gradient(to right top, #447aca, #2b6dad, #1c6090, #1a5273, #1d4358);
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border: 1px solid rgba(255, 255, 255, 0.58);
 }
 
 .info-box-text {
@@ -140,18 +145,35 @@
 /* Forecast Part */
 
 .weather-forecast {
+    height: 180px;
     width: 100%;
-    height: 320px;
-    background-color: pink;
+    min-width: 930px;
+    overflow-x: scroll;
+    white-space: nowrap;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px 10px;
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border: 1px solid rgba(255, 255, 255, 0.58);
 }
 
 .forecast-element {
     height: 100%;
-    width: 10%;
-    background-color: red;
-    border-radius: 10px;
+    width: 80px;
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hourly-forecast-icon {
+    width: 40px;
 }

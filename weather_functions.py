@@ -4,7 +4,22 @@ from datetime import datetime
 import requests
 from flask import url_for
 
+
 # Integrate the API, update api keys to variables
+def get_weather_icon(condition):
+    """Returns weather icon based on condition or returns mist for atmosphere conditions."""
+    filenames = {
+        "Clear": "images/weather/clear.png",
+        "Thunderstorm": "images/weather/thunderstorm.png",
+        "Drizzle": "images/weather/drizzle.png",
+        "Rain": "images/weather/rain.png",
+        "Snow": "images/weather/snow.png",
+        "Clouds": "images/weather/clouds.png",
+    }
+    if condition in filenames.keys():
+        return filenames[condition]
+    else:
+        return "images/weather/mist.png"
 
 
 # Needs to get city, units, api key in future
@@ -50,21 +65,6 @@ def get_current_weather(units):
         aqi_dict["point"] = aqi_json["list"][0]["main"]["aqi"]
         aqi_dict["text"] = options[aqi_dict["point"]]
         return aqi_dict
-
-    def get_weather_icon(condition):
-        """Returns weather icon based on condition or returns mist for atmosphere conditions."""
-        filenames = {
-            "Clear": "images/weather/clear.png",
-            "Thunderstorm": "images/weather/thunderstorm.png",
-            "Drizzle": "images/weather/drizzle.png",
-            "Rain": "images/weather/rain.png",
-            "Snow": "images/weather/snow.png",
-            "Clouds": "images/weather/clouds.png",
-        }
-        if condition in filenames.keys():
-            return filenames[condition]
-        else:
-            return "images/weather/mist.png"
 
     def get_weather_background(condition):
         """Returns weather background based on condition or returns mist for atmosphere conditions."""
@@ -209,6 +209,9 @@ def get_forecast(units):
                         "time": hourly_time,
                         "temp": str(round(content["temp"])) + "°C",
                         "state": content["main"].title(),
+                        "icon": url_for(
+                            "static", filename=get_weather_icon(content["main"].title())
+                        ),
                     }
                 ]
             else:
@@ -217,6 +220,9 @@ def get_forecast(units):
                         "time": hourly_time,
                         "temp": str(round(content["temp"])) + "°C",
                         "state": content["main"].title(),
+                        "icon": url_for(
+                            "static", filename=get_weather_icon(content["main"].title())
+                        ),
                     }
                 )
         elif units == "imperial":
@@ -227,6 +233,9 @@ def get_forecast(units):
                         "time": hourly_time,
                         "temp": str(round(content["temp"])) + "°F",
                         "state": content["main"].title(),
+                        "icon": url_for(
+                            "static", filename=get_weather_icon(content["main"].title())
+                        ),
                     }
                 ]
             else:
@@ -235,6 +244,9 @@ def get_forecast(units):
                         "time": hourly_time,
                         "temp": str(round(content["temp"])) + "°F",
                         "state": content["main"].title(),
+                        "icon": url_for(
+                            "static", filename=get_weather_icon(content["main"].title())
+                        ),
                     }
                 )
 
