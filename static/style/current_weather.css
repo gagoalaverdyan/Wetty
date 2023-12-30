@@ -13,6 +13,7 @@
 
 .current-weather-row {
     width: 100%;
+    min-width: 930px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -22,7 +23,6 @@
 
 .current-weather {
     width: 360px;
-    min-width: 280px;
     height: 260px;
     padding: 5px 12px;
     background-position: center;
@@ -80,7 +80,6 @@
 
 .current-air-quality {
     width: 260px;
-    min-width: 180px;
     height: 260px;
     padding: 5px 12px;
     background-position: center;
@@ -147,7 +146,6 @@
 .weather-forecast {
     height: 180px;
     width: 100%;
-    min-width: 930px;
     overflow-x: scroll;
     white-space: nowrap;
     border-radius: 10px;
@@ -156,12 +154,6 @@
     align-items: flex-start;
     justify-content: center;
     gap: 0px 10px;
-    background: rgba(255, 255, 255, 0.31);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.5px);
-    -webkit-backdrop-filter: blur(7.5px);
-    border: 1px solid rgba(255, 255, 255, 0.58);
 }
 
 .forecast-element {
@@ -176,4 +168,16 @@
 
 .hourly-forecast-icon {
     width: 40px;
+}
+
+/* Current forecast row */
+
+.daily-forecast {
+    height: 120px;
+    width: 20%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
