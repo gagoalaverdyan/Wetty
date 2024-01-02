@@ -6,12 +6,7 @@
     <div class="container-search">
         <div class="welcomer glass-background">
             <img src="{{ url_for("static", filename="logo.png") }}" class="logo">
-            <div class="welcome-text">Welcome to Wetty!</div>
-            <div class="cities-list">
-                {% for city in cities %}
-                    <div class="city-name">{{ city }}</div>
-                {% endfor %}
-            </div>
+            <div class="welcome-text">The city you entered does not exist :(.</div>
             <form class="search" method="GET" action="/weather">
                 <div class="search-input-city">
                     <input type="text" placeholder="Enter the city name" spellcheck="false" class="search-input" name="city">

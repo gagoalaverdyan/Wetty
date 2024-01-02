@@ -46,7 +46,7 @@
                     <div class="info-box-text">{{ current_weather["wind_speed"] }}</div>
                 </div>
                 <div class="additional-info-box wind_deg">
-                    <div class="current-info-text">Wind Degree</div>
+                    <div class="current-info-text">Wind Direction</div>
                     <div class="info-box-text">{{ current_weather["wind_deg"] }}</div>
                 </div>
                 <div class="additional-info-box cloudiness">
@@ -70,6 +70,7 @@
             </div>
         </div>
     </div>
+    <div class="section-text">Hourly forecast</div>
     <div class="current-weather-row">
         <div class="weather-forecast glass-background">
             {% for day, fc in hourly_forecast.items() %}
@@ -85,6 +86,7 @@
             {% endfor %}
         </div>
     </div>
+    <div class="section-text">Daily forecast</div>
     <div class="current-weather-row">
         {% for day, fc in daily_forecast.items() %}
             <div class="daily-forecast glass-background">

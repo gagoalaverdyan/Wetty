@@ -4,7 +4,7 @@ function updateWeatherBackground() {
     const atmosphereConditions = ['Mist', "Smoke", "Haze", "Dust", "Fog", "Sand", "Ash", "Squall", "Tornado"]
 
     if (atmosphereConditions.includes(weatherCondition)) {
-        weatherBackground.style.backgroundImage = "url(static/images/weather_backgrounds/mist.png)"
+        weatherBackground.style.backgroundImage = "url(static/images/weather-backgrounds/mist.png)"
     } else {
         weatherBackground.style.backgroundImage = `url(static/images/weather-backgrounds/${weatherCondition.toLowerCase()}.png)`
     }
