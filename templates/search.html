@@ -8,8 +8,8 @@
             <img src="{{ url_for("static", filename="logo.png") }}" class="logo">
             <div class="welcome-text">Welcome to Wetty!</div>
             <div class="cities-list">
-                {% for city in cities %}
-                    <div class="city-name">{{ city }}</div>
+                {% for ccity in cities %}
+                    <div class="city-name"><a href="{{ url_for("get_weather", city=ccity, units="metric") }}">{{ ccity }}</a></div>
                 {% endfor %}
             </div>
             <form class="search" method="GET" action="/weather">
