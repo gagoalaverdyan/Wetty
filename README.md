@@ -19,7 +19,6 @@ pip install -r requirements.txt
 python wetty.py
 ```
 
-
 ## Contributing
 
 Pull requests are very welcome. For major changes, please open an issue first
