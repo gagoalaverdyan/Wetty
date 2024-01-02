@@ -1,6 +1,6 @@
 # Wetty
 
-Wetty is a simple and elegant weather application built using Python, Flask, HTML, CSS, and JavaScript. Get up-to-date weather information with a clean user interface and real-time updates.
+Wetty is a sleek and comprehensive Full-Stack weather application. Built using Python, Flask, HTML, CSS, and JavaScript, this app delivers real-time weather updates with an intuitive and responsive user interface
 
 ![image](https://i.imgur.com/XQF4gn5.png)
 ![image](https://i.imgur.com/lj9co2J.png)
