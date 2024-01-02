@@ -7,7 +7,7 @@ Wetty is a sleek and comprehensive Full-Stack weather application. Built using P
 
 ## Installation
 
-If you want to run the app locally, t is recommended to do so in a virtual environment since it has multiple requirements.
+If you want to run the app locally, it is recommended to do so in a virtual environment since it has multiple requirements.
 
 ```bash
 mkdir wetty
