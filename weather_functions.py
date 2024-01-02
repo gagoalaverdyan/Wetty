@@ -257,17 +257,20 @@ def get_forecast(units):
     for date, values in daily_forecast_temp.items():
         min_value = min(values)
         max_value = max(values)
+        state = daily_state_temp[date][4]
         if units == "metric":
             daily_forecast[date] = {
                 "min": str(min_value) + "°C",
                 "max": str(max_value) + "°C",
-                "state": daily_state_temp[date][4],
+                "state": state,
+                "icon": url_for("static", filename=get_weather_icon(state)),
             }
         elif units == "imperial":
             daily_forecast[date] = {
                 "min": str(min_value) + "°C",
                 "max": str(max_value) + "°F",
-                "state": daily_state_temp[date][4],
+                "state": state,
+                "icon": url_for("static", filename=get_weather_icon(state)),
             }
     return (hourly_forecast, daily_forecast)
 

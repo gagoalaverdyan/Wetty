@@ -89,9 +89,9 @@
         {% for day, fc in daily_forecast.items() %}
             <div class="daily-forecast glass-background">
                 <div class="current-info-text">{{ day }}</div>
-                <div class="current-info-text">{{ fc.min }}</div>
-                <div class="current-info-text">{{ fc.max }}</div>
-                <div class="current-info-text">{{ fc.state }}</div>  
+                <img class="hourly-forecast-icon" src="{{ fc.icon }}" alt="">
+                <div class="current-info-text">{{ fc.state }}</div>
+                <div class="current-info-text">Min: {{ fc.min }}, Max: {{ fc.max }}</div>
             </div>
         {% endfor %}
     </div>
